@@ -1,0 +1,16 @@
+{
+  "visualizations": [
+    {
+      "id": "radar_chart",
+      "label": "Radar Chart (Custom)",
+      "type": "radar",
+      "icon": "chart",
+      "resources": {
+        "js": ["https://cdn.jsdelivr.net/npm/chart.js"]
+      },
+      "script": "https://helpshift-solutions.github.io/looker-radar-chart/index.html",
+      "style": "",
+      "defaultConfig": {}
+    }
+  ]
+}

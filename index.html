@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <canvas id="radar" width="400" height="400"></canvas>
+    <script>
+        let chart;
+        looker.plugins.visualizations.add({
+            id: "radar_chart",
+            label: "Radar Chart (Custom)",
+            create: function (element, config) { },
+            updateAsync: function (data, element, config, queryResponse, details, done) {
+                const dimension = queryResponse.fields.dimensions[0].name;
+                const metrics = queryResponse.fields.metrics.map(f => f.name);
+                const labels = data.map(row => row[dimension].value);
+                const datasets = metrics.map(metric => ({
+                    label: metric,
+                    data: data.map(row => row[metric].value),
+                    fill: true
+                }));
+                const ctx = document.getElementById("radar").getContext("2d");
+                if (chart) chart.destroy();
+                chart = new Chart(ctx, {
+                    type: "radar",
+                    data: { labels: labels, datasets: datasets },
+                    options: {
+                        responsive: true,
+                        plugins: { legend: { position: "top" } },
+                        scales: { r: { beginAtZero: true, max: 5 } }
+                    }
+                });
+                done();
+            }
+        });
+    </script>
+</body>
+
+</html>
