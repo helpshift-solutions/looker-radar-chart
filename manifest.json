@@ -1,5 +1,7 @@
 {
-  "visualizations": [
+  "name": "Radar Chart Visualization",
+  "organization": "Helpshift Solutions",
+  "components": [
     {
       "id": "radar_chart",
       "label": "Radar Chart (Custom)",
