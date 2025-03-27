@@ -1,4 +1,5 @@
 dscc.subscribeToData(function(data) {
+  // ONLY create the chart when Looker Studio provides data!
   const ctx = document.createElement("canvas");
   ctx.id = "radar";
   document.body.appendChild(ctx);
