@@ -1,6 +1,6 @@
 {
     "visualization": {
-      "id": "radar_chart",
+      "id": "radar_chart_helpshift",
       "label": "Radar Chart (Custom)",
       "config": "https://helpshift-solutions.github.io/looker-radar-chart/config.json",
       "scripts": [
