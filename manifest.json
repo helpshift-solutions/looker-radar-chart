@@ -1,21 +1,10 @@
 {
-  "name": "Radar Chart",
-  "organization": "Helpshift Solutions",
-  "description": "A custom radar chart visualization for Looker Studio.",
-  "logoUrl": "https://helpshift-solutions.github.io/looker-radar-chart/logo.png",
-  "packageUrl": "https://github.com/helpshift-solutions/looker-radar-chart",
-  "supportUrl": "https://amits-demo.helpshift.com/hc/en/",
-  "components": [
-    {
+    "visualization": {
       "id": "radar_chart",
-      "name": "Radar Chart",
-      "description": "Displays data in a radar chart format.",
-      "iconUrl": "https://helpshift-solutions.github.io/looker-radar-chart/icon.jpeg",
-      "resource": {
-        "js": "https://helpshift-solutions.github.io/looker-radar-chart/radar-chart.js",
-        "config": "https://helpshift-solutions.github.io/looker-radar-chart/config.json",
-        "css": "https://helpshift-solutions.github.io/looker-radar-chart/radar-chart.css"
-      }
-    }
-  ]
-}
+      "label": "Radar Chart",
+      "config": "config.json",
+      "scripts": ["radar-chart.js"],
+      "styles": ["radar-chart.css"]
+    },
+    "devMode": true
+  }
