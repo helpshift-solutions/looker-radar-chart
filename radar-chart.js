@@ -1,8 +1,14 @@
 dscc.subscribeToData(function(data) {
-  // ONLY create the chart when Looker Studio provides data!
-  const ctx = document.createElement("canvas");
-  ctx.id = "radar";
-  document.body.appendChild(ctx);
+  const container = document.createElement("div");
+  container.style.width = "100%";
+  container.style.height = "100%";
+  document.body.appendChild(container);
+
+  const canvas = document.createElement("canvas");
+  canvas.id = "radar";
+  container.appendChild(canvas);
+
+  const ctx = canvas.getContext("2d");
 
   const labels = data.tables.DEFAULT.map(row => row.dimension);
   const values = data.tables.DEFAULT.map(row => row.metric[0]);
@@ -17,16 +23,18 @@ dscc.subscribeToData(function(data) {
         fill: true,
         backgroundColor: 'rgba(54, 162, 235, 0.2)',
         borderColor: 'rgba(54, 162, 235, 1)',
-        borderWidth: 1
+        pointBackgroundColor: 'rgba(54, 162, 235, 1)'
       }]
     },
     options: {
       responsive: true,
       plugins: {
         legend: { position: 'top' },
-        title: { display: true, text: 'Radar Chart' }
+        title: { display: true, text: 'Custom Radar Chart' }
       },
-      scales: { r: { beginAtZero: true } }
+      scales: {
+        r: { beginAtZero: true }
+      }
     }
   });
 });

@@ -1,13 +1,13 @@
 {
-    "visualization": {
-      "id": "radar_chart_helpshift",
-      "label": "Radar Chart (Custom)",
-      "config": "config.json",
-      "scripts": [
-        "https://cdn.jsdelivr.net/npm/chart.js",
-        "radar-chart.js"
-      ],
-      "styles": ["radar-chart.css"]
-    },
-    "devMode": true
-  }
+  "visualization": {
+    "id": "radar_chart_helpshift",
+    "label": "Radar Chart (Custom)",
+    "config": "config.json",
+    "scripts": [
+      "https://cdn.jsdelivr.net/npm/chart.js",
+      "radar-chart.js"
+    ],
+    "styles": ["radar-chart.css"]
+  },
+  "devMode": true
+}
