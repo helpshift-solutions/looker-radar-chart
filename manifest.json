@@ -2,13 +2,12 @@
     "visualization": {
       "id": "radar_chart_helpshift",
       "label": "Radar Chart (Custom)",
-      "config": "https://helpshift-solutions.github.io/looker-radar-chart/config.json",
+      "config": "config.json",
       "scripts": [
         "https://cdn.jsdelivr.net/npm/chart.js",
-        "https://helpshift-solutions.github.io/looker-radar-chart/radar-chart.js"
+        "radar-chart.js"
       ],
-      "styles": ["https://helpshift-solutions.github.io/looker-radar-chart/radar-chart.css"]
+      "styles": ["radar-chart.css"]
     },
     "devMode": true
   }
-  
