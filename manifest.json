@@ -1,9 +1,12 @@
 {
     "visualization": {
       "id": "radar_chart",
-      "label": "Radar Chart",
+      "label": "Radar Chart (Custom)",
       "config": "config.json",
-      "scripts": ["radar-chart.js"],
+      "scripts": [
+        "https://cdn.jsdelivr.net/npm/chart.js",
+        "radar-chart.js"
+      ],
       "styles": ["radar-chart.css"]
     },
     "devMode": true

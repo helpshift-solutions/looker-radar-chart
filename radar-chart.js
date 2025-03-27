@@ -1,38 +1,31 @@
-// Import the dscc library
-import * as dscc from '@google/dscc';
-import Chart from 'chart.js/auto';
+dscc.subscribeToData(function(data) {
+  const ctx = document.createElement("canvas");
+  ctx.id = "radar";
+  document.body.appendChild(ctx);
 
-// Subscribe to data and style changes
-dscc.subscribeToData(drawViz, { transform: dscc.objectTransform });
+  const labels = data.tables.DEFAULT.map(row => row.dimension);
+  const values = data.tables.DEFAULT.map(row => row.metric[0]);
 
-function drawViz(data) {
-  const dimensions = data.tables.DEFAULT.map(row => row.dimension);
-  const metrics = data.tables.DEFAULT.map(row => row.metric[0]);
-
-  const ctx = document.getElementById('radarChart').getContext('2d');
   new Chart(ctx, {
     type: 'radar',
     data: {
-      labels: dimensions,
+      labels: labels,
       datasets: [{
-        label: 'My Dataset',
-        data: metrics,
-        backgroundColor: dscc.getColorById('chartColor').color,
-        borderColor: dscc.getColorById('chartColor').color,
+        label: 'Radar Chart',
+        data: values,
+        fill: true,
+        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+        borderColor: 'rgba(54, 162, 235, 1)',
         borderWidth: 1
       }]
     },
     options: {
       responsive: true,
       plugins: {
-        legend: {
-          position: 'top',
-        },
-        title: {
-          display: true,
-          text: 'Custom Radar Chart'
-        }
-      }
+        legend: { position: 'top' },
+        title: { display: true, text: 'Radar Chart' }
+      },
+      scales: { r: { beginAtZero: true } }
     }
   });
-}
+});
