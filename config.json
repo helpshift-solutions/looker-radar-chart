@@ -1,0 +1,45 @@
+{
+    "data": [
+      {
+        "id": "dimensions",
+        "label": "Dimensions",
+        "elements": [
+          {
+            "id": "dimension",
+            "label": "Dimension",
+            "type": "DIMENSION",
+            "options": {
+              "min": 1,
+              "max": 1
+            }
+          }
+        ]
+      },
+      {
+        "id": "metrics",
+        "label": "Metrics",
+        "elements": [
+          {
+            "id": "metric",
+            "label": "Metric",
+            "type": "METRIC",
+            "options": {
+              "min": 1,
+              "max": 6
+            }
+          }
+        ]
+      }
+    ],
+    "style": [
+      {
+        "id": "chartColor",
+        "label": "Chart Color",
+        "type": "COLOR",
+        "defaultValue": {
+          "color": "#3366CC",
+          "opacity": 1
+        }
+      }
+    ]
+  }
